@@ -1,0 +1,11 @@
+.div1 {
+    border: 5px outset rgb(7, 4, 42);
+    background-color: rgb(29, 93, 33);
+    text-align: center; 
+}
+
+.calc1 {
+    border: 6px solid rgb(102, 138, 165);
+    background-color: rgb(138, 120, 83);
+    text-align: left; 
+}

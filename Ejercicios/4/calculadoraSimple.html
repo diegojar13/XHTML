@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Calculadora 
+        while(true){
+            //preguntar 1 que operacion quieres hacer +, - ,*,/, salir 
+            //preguntar num1 
+            //preguntar num2 
+            //mostrar resultado
+        }
+        //funciones que necesaria para hacer esto una para sumar otra restar y otra dividir
+        */
+// Función para sumar dos números
+function sumar(num1, num2) {
+    return num1 + num2;
+}
+
+// Función para restar dos números
+function restar(num1, num2) {
+    return num1 - num2;
+}
+
+// Función para multiplicar dos números
+function multiplicar(num1, num2) {
+    return num1 * num2;
+}
+
+// Función para dividir dos números
+function dividir(num1, num2) {
+    if (num2 === 0) {
+        return "Error: No se puede dividir por cero";
+    }
+    return num1 / num2;
+}
+
+// Bucle principal para ejecutar la calculadora
+while (true) {
+    // Pedir al usuario qué operación desea realizar
+    var operacion = prompt("¿Qué operación deseas realizar? (+, -, *, /, salir)");
+
+    // Si el usuario ingresa "salir", salir del bucle
+    if (operacion === "salir") {
+        break;
+    }
+
+    // Pedir al usuario que ingrese los números
+    var num1 = parseFloat(prompt("Ingresa el primer número:"));
+    var num2 = parseFloat(prompt("Ingresa el segundo número:"));
+
+    // Realizar la operación basada en la entrada del usuario
+    switch (operacion) {
+        case "+":
+            alert("El resultado es: " + sumar(num1, num2));
+            break;
+        case "-":
+            alert("El resultado es: " + restar(num1, num2));
+            break;
+        case "*":
+            alert("El resultado es: " + multiplicar(num1, num2));
+            break;
+        case "/":
+            alert("El resultado es: " + dividir(num1, num2));
+            break;
+        default:
+            alert("Operación no válida");
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+div{
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+}
+.divPri{
+    width: 800px;
+    height: 500px;
+    background-color: red ;
+    display: inline;
+}
+.divSeg{
+    width: 800px;
+    height: 500px;
+    background-color: rgb(255, 0, 140) ;
+    display: inline-block;
+}
+.divTer{
+    width: 800px;
+    height: 500px;
+    background-color: rgb(255, 238, 0) ;
+    display: none;
+}

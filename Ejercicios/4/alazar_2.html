@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * elegir un numero para adivinar guardarlo en una variable y con promt dentro del while 
+         * preguntar hasta adivinar el numero 
+         * controlar cuando lo adivine, salte un alert con un mensaje y se acabe el juego, y si se le da a 
+         * cancelar que tambien se acabe el juego 
+         * 
+        
+        while(){
+        }
+        */      
+// Generar un número aleatorio entre 1 y 100
+var numeroAdivinar = Math.floor(Math.random() * 100) + 1;
+// Variable para almacenar el número ingresado por el usuario
+var intento;
+// Loop para preguntar al usuario hasta que adivine o cancele
+while (true) {
+    // Pedir al usuario que ingrese un número
+    intento = prompt("Adivina un número entre 1 y 100:");
+    // Si el usuario hace clic en "Cancelar" o deja el campo vacío, salir del juego
+    if (intento === null || intento === "") {
+        alert("Has cancelado el juego. El número era " + numeroAdivinar + ".");
+        break;
+    }
+    // Convertir el intento a un número entero
+    intento = parseInt(intento);
+    // Verificar si el intento es el número correcto
+    if (intento === numeroAdivinar) {
+        alert("¡Felicidades! ¡Has adivinado el número correctamente!");
+        break;
+    } else if (intento < numeroAdivinar) {
+        alert("Intentalo con un número más grande.");
+    } else {
+        alert("Intentalo con un número más pequeño.");
+    }
+}
+
+    </script>
+</body>
+</html>
