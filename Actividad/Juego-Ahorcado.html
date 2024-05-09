@@ -1,0 +1,71 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego del Ahorcado</title>
+</head>
+<body>
+<h1>Juego del Ahorcado</h1>
+<div id="wordContainer"></div>
+<div id="letterInput">
+    <label for="letter">Introduce una letra:</label>
+    <input type="text" id="letter" maxlength="1">
+    <button onclick="checkLetter()">Comprobar</button>
+</div>
+<div id="usedLetters"></div>
+
+<script>
+// Lista de palabras para inizializar el juego
+var palabras = ["Arroz", "Casa", "Galleta", "Pelota", "Ventilador", "Botella", "Café"];
+
+// Seleccionar una palabra aleatoria
+var palabraSecreta = palabras[Math.floor(Math.random() * palabras.length)].toUpperCase();
+console.log(palabraSecreta); // Mostrar la palabra secreta en la consola para propósitos de prueba
+
+// Inicializar la lista de letras acertadas
+var letrasAcertadas = new Array(palabraSecreta.length).fill("_");
+
+// Mostrar la palabra oculta
+var wordContainer = document.getElementById("wordContainer");
+wordContainer.textContent = letrasAcertadas.join(" ");
+
+// Lista de letras utilizadas
+var usedLetters = [];
+
+// Función para comprobar si la letra está en la palabra.
+function checkLetter() {
+    var letraInput = document.getElementById("letter").value.toUpperCase();
+
+    // Verificar si la letra ya fue usada
+    if (usedLetters.includes(letraInput)) {
+        alert("Ya has usado esa letra. ¡Intenta con otra!");
+        return;
+    }
+
+    // Añadir una letra a la lista de letras usadas
+    usedLetters.push(letraInput);
+    var usedLettersDisplay = document.getElementById("usedLetters");
+    usedLettersDisplay.textContent = "Letras usadas: " + usedLetters.join(", ");
+
+    // Verificar si la letra está en la palabra
+    var acierto = false;
+    for (var i = 0; i < palabraSecreta.length; i++) {
+        if (palabraSecreta[i] === letraInput) {
+            letrasAcertadas[i] = letraInput;
+            acierto = true;
+        }
+    }
+
+    // Actualizar la visualización de la palabra
+    wordContainer.textContent = letrasAcertadas.join(" ");
+
+    // Comprobación si todas las letras han sido adivinadas
+    if (letrasAcertadas.join("") === palabraSecreta) {
+        alert("¡Felicidades! ¡Has ganado!");
+    }
+}
+</script>
+</body>
+</html>
